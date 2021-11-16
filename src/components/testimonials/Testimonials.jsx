@@ -1,10 +1,10 @@
-import React from 'react';
-import "./testimonials.scss"
+import React from "react";
+import "./testimonials.scss";
 
 export default function Testimonials() {
   return (
-    <div className="testimonials">
+    <div className="testimonials" id="testimonials">
       Testimonials
     </div>
-  )
+  );
 }
