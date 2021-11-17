@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./portfolio.scss";
 import PortfolioList from "../portfolioList/PortfolioList";
+import {
+  featuredPortfolio,
+  webPortfolio,
+  mobilePortfolio,
+  designPortfolio,
+  contentPortfolio,
+} from "../../data";
 
 export default function Portfolio() {
   const [selected, setSelected] = useState("");
+  const [data, setData] = useState([]);
 
   const list = [
     { id: "featured", title: "Featured" },
@@ -12,6 +20,29 @@ export default function Portfolio() {
     { id: "design", title: "Design" },
     { id: "content", title: "Content" },
   ];
+
+  useEffect(() => {
+    switch (selected) {
+      case "featured":
+        setData(featuredPortfolio);
+        break;
+      case "web":
+        setData(webPortfolio);
+        break;
+      case "mobile":
+        setData(mobilePortfolio);
+        break;
+      case "design":
+        setData(designPortfolio);
+        break;
+      case "content":
+        setData(contentPortfolio);
+        break;
+      default:
+        setData(featuredPortfolio);
+        break;
+    }
+  }, [selected]);
 
   return (
     <div className="portfolio" id="portfolio">
@@ -28,55 +59,12 @@ export default function Portfolio() {
         ))}
       </ul>
       <div className="container">
-        <div className="item">
-          <img
-            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
-            alt=""
-          />
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
-            alt=""
-          />
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
-            alt=""
-          />
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
-            alt=""
-          />
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
-            alt=""
-          />
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
-            alt=""
-          />
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
-            alt=""
-          />
-          <h3>Banking App</h3>
-        </div>
+        {data.map((d) => (
+          <div className="item">
+            <img src={d.img} alt="" />
+            <h3>{d.title}</h3>
+          </div>
+        ))}
       </div>
     </div>
   );
