@@ -4,7 +4,65 @@ import "./portfolio.scss";
 export default function Portfolio() {
   return (
     <div className="portfolio" id="portfolio">
-      Portfolio
+      <h1>Portfolio</h1>
+      <ul>
+        <li className="active">Featured</li>
+        <li>Web App</li>
+        <li>Mobile App</li>
+        <li>Design</li>
+        <li>Branding</li>
+      </ul>
+      <div className="container">
+        <div className="item">
+          <img
+            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
+            alt=""
+          />
+          <h3>Banking App</h3>
+        </div>
+        <div className="item">
+          <img
+            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
+            alt=""
+          />
+          <h3>Banking App</h3>
+        </div>
+        <div className="item">
+          <img
+            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
+            alt=""
+          />
+          <h3>Banking App</h3>
+        </div>
+        <div className="item">
+          <img
+            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
+            alt=""
+          />
+          <h3>Banking App</h3>
+        </div>
+        <div className="item">
+          <img
+            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
+            alt=""
+          />
+          <h3>Banking App</h3>
+        </div>
+        <div className="item">
+          <img
+            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
+            alt=""
+          />
+          <h3>Banking App</h3>
+        </div>
+        <div className="item">
+          <img
+            src="https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?cs=srgb&dl=pexels-anna-shvets-4482900.jpg&fm=jpg"
+            alt=""
+          />
+          <h3>Banking App</h3>
+        </div>
+      </div>
     </div>
   );
 }
