@@ -1,14 +1,21 @@
+@import "../../global.scss";
+
 .works {
   background-color: crimson;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 
   .arrow {
     height: 50px;
     position: absolute;
     cursor: pointer;
+
+    @include mobile {
+      display: none;
+    }
 
     &.left {
       left: 100px;
@@ -26,7 +33,13 @@
     position: absolute;
     left: 0;
     transition: all 1s ease-out;
-   
+
+    @include mobile {
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .container {
       width: 100vw;
       display: flex;
@@ -41,12 +54,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include mobile {
+          width: 90%;
+          height: 180px;
+          margin: 5px 0;
+        }
+
         .left {
           flex: 4;
           height: 80%;
           display: flex;
           align-items: center;
           justify-content: center;
+          @include mobile {
+            flex: 6;
+          }
 
           .leftContainer {
             width: 90%;
@@ -54,6 +77,11 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
+            @include mobile {
+              height: 100%;
+              align-items: center;
+            }
 
             .imgContainer {
               width: 40px;
@@ -64,6 +92,11 @@
               align-items: center;
               justify-content: center;
 
+              @include mobile {
+                width: 30px;
+                height: 30px;
+              }
+
               img {
                 width: 25px;
               }
@@ -71,6 +104,10 @@
 
             h2 {
               font-size: 20px;
+
+              @include mobile {
+                font-size: 18px;
+              }
             }
 
             p {
@@ -93,6 +130,10 @@
           align-items: center;
           justify-content: center;
           overflow: hidden;
+
+          @include mobile {
+            flex: 6;
+          }
 
           img {
             width: 400px;
